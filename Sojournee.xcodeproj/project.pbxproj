@@ -24,9 +24,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		5F595DFFDC15D93475D8611F /* Pods-Sojournee.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sojournee.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sojournee/Pods-Sojournee.debug.xcconfig"; sourceTree = "<group>"; };
-		7DACC71B53F670363A5743BD /* Pods-SojourneeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SojourneeTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SojourneeTests/Pods-SojourneeTests.debug.xcconfig"; sourceTree = "<group>"; };
-		877CD4496D7FB7F18F9C0207 /* Pods_SojourneeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SojourneeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7ECDC7B1F715D6000AC9CB2 /* Sojournee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sojournee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7ECDC7E1F715D6E00AC9CB2 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E7ECDC7F1F715D6E00AC9CB2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -42,9 +39,6 @@
 		E7ECDC961F715D6E00AC9CB2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E7ECDC971F715D6E00AC9CB2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		E7ECDCAF1F716B5B00AC9CB2 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
-		FB701C251C3EB934D923FFE7 /* Pods-SojourneeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SojourneeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SojourneeTests/Pods-SojourneeTests.release.xcconfig"; sourceTree = "<group>"; };
-		FE45CC22DF33C7F11CE12C24 /* Pods-Sojournee.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sojournee.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sojournee/Pods-Sojournee.release.xcconfig"; sourceTree = "<group>"; };
-		FEE05967D9ACA7A74AEC994C /* Pods_Sojournee.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sojournee.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,34 +52,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CB55F0AFA0459393C5F33A7D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				FEE05967D9ACA7A74AEC994C /* Pods_Sojournee.framework */,
-				877CD4496D7FB7F18F9C0207 /* Pods_SojourneeTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		CCCE616B94D3C01B4A89E8F5 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				5F595DFFDC15D93475D8611F /* Pods-Sojournee.debug.xcconfig */,
-				FE45CC22DF33C7F11CE12C24 /* Pods-Sojournee.release.xcconfig */,
-				7DACC71B53F670363A5743BD /* Pods-SojourneeTests.debug.xcconfig */,
-				FB701C251C3EB934D923FFE7 /* Pods-SojourneeTests.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		E724B53D1F6459E800A3964D = {
 			isa = PBXGroup;
 			children = (
 				E7ECDCAF1F716B5B00AC9CB2 /* Default-568h@2x.png */,
 				E7ECDC7D1F715D6E00AC9CB2 /* Sojournee */,
-				CB55F0AFA0459393C5F33A7D /* Frameworks */,
 				E7ECDC7B1F715D6000AC9CB2 /* Sojournee.app */,
-				CCCE616B94D3C01B4A89E8F5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -368,7 +340,6 @@
 		};
 		E724B5641F6459E900A3964D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5F595DFFDC15D93475D8611F /* Pods-Sojournee.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3L34B92962;
@@ -383,7 +354,6 @@
 		};
 		E724B5651F6459E900A3964D /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE45CC22DF33C7F11CE12C24 /* Pods-Sojournee.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 3L34B92962;
