@@ -1,20 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wTi-6h-fGk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="wTi-6h-fGk">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Bodoni72.ttc">
+            <string>BodoniSvtyTwoITCTT-Book</string>
+        </array>
+        <array key="HelveticaNeueLights.ttc">
+            <string>HelveticaNeue-Light</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Sojourn-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="pennapps_xvi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Sojournee" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -105,7 +113,7 @@
         <!--Sojourn-->
         <scene sceneID="S0t-Pa-kWE">
             <objects>
-                <viewController id="dAq-iT-8ud" customClass="CameraViewController" customModule="pennapps_xvi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="dAq-iT-8ud" customClass="CameraViewController" customModule="Sojournee" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KW9-e6-bCQ"/>
                         <viewControllerLayoutGuide type="bottom" id="jls-3f-NdC"/>
@@ -113,44 +121,9 @@
                     <view key="view" contentMode="scaleToFill" id="hZV-VS-OFA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8VU-xu-k0D">
-                                <rect key="frame" x="16" y="72" width="343" height="48.5"/>
-                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acu-jf-kT2">
-                                <rect key="frame" x="16" y="147" width="40" height="21"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sad platypus" translatesAutoresizingMaskIntoConstraints="NO" id="gLx-Zy-4eA">
-                                <rect key="frame" x="0.0" y="176" width="375" height="375"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="gLx-Zy-4eA" secondAttribute="height" multiplier="1:1" id="OF3-J7-0lh"/>
-                                </constraints>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="gLx-Zy-4eA" firstAttribute="leading" secondItem="hZV-VS-OFA" secondAttribute="leading" id="5NO-DZ-kFc"/>
-                            <constraint firstItem="gLx-Zy-4eA" firstAttribute="top" secondItem="acu-jf-kT2" secondAttribute="bottom" constant="8" id="I6a-Ll-qUU"/>
-                            <constraint firstItem="8VU-xu-k0D" firstAttribute="top" secondItem="KW9-e6-bCQ" secondAttribute="bottom" constant="8" id="IhL-yR-dxm"/>
-                            <constraint firstAttribute="trailing" secondItem="gLx-Zy-4eA" secondAttribute="trailing" id="S3d-Xo-4hp"/>
-                            <constraint firstItem="acu-jf-kT2" firstAttribute="top" secondItem="8VU-xu-k0D" secondAttribute="bottom" constant="26.5" id="TFZ-P7-YDI"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="8VU-xu-k0D" secondAttribute="trailing" id="UD0-s8-wqj"/>
-                            <constraint firstItem="acu-jf-kT2" firstAttribute="leading" secondItem="hZV-VS-OFA" secondAttribute="leadingMargin" id="enB-3o-SV3"/>
-                            <constraint firstItem="8VU-xu-k0D" firstAttribute="leading" secondItem="hZV-VS-OFA" secondAttribute="leadingMargin" id="rh7-Qs-zcE"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Sojourn" id="Psd-4x-PQ2"/>
-                    <connections>
-                        <outlet property="finishLabel" destination="8VU-xu-k0D" id="qrh-w3-P3O"/>
-                        <outlet property="finishLabel2" destination="acu-jf-kT2" id="dVE-YB-9Gl"/>
-                        <outlet property="picture" destination="gLx-Zy-4eA" id="F97-rn-g2u"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDv-Fb-5eM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,7 +132,7 @@
         <!--Sojourn-->
         <scene sceneID="duV-8t-j2W">
             <objects>
-                <viewController id="e0i-Nk-wng" customClass="PhotoViewController" customModule="pennapps_xvi" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="e0i-Nk-wng" customClass="PhotoViewController" customModule="Sojournee" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JLz-bI-J1k"/>
                         <viewControllerLayoutGuide type="bottom" id="Yrp-FM-ico"/>
@@ -246,7 +219,7 @@
                     <tabBarItem key="tabBarItem" title="Map" image="map" id="5q8-FO-5rG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="FYl-11-6eQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -264,7 +237,7 @@
                 <navigationController storyboardIdentifier="PictureNavController" automaticallyAdjustsScrollViewInsets="NO" id="tg8-jQ-SYY" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MkC-XO-RyP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -282,7 +255,7 @@
                 <navigationController storyboardIdentifier="CameraNavController" automaticallyAdjustsScrollViewInsets="NO" id="ex6-0Y-C2k" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="D2U-qE-sQT">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -297,6 +270,5 @@
     </scenes>
     <resources>
         <image name="map" width="25" height="25"/>
-        <image name="sad platypus" width="193" height="261"/>
     </resources>
 </document>

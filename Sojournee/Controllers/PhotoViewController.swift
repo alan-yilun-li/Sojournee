@@ -28,7 +28,7 @@ class PhotoViewController: UIViewController {
                 self.view.bringSubview(toFront: self.webView)
             }
             
-            DispatchQueue.global(qos: .userInitiated).async { [unowned self] _ in
+            DispatchQueue.global(qos: .userInitiated).async { [unowned self] () -> Void in
                 
                 let severity: Double = 100000
                 let latitude = round(Target.current!.location.coordinate.latitude * severity) / severity

@@ -16,7 +16,7 @@ struct ViewCustomizer {
         let font = UIFont(name: "Bodoni 72", size: 24)
         UIApplication.shared.statusBarStyle = .lightContent
         navBar?.barTintColor = UIColor.skyblue
-        navBar?.titleTextAttributes = [NSFontAttributeName: font as Any, NSForegroundColorAttributeName: UIColor.white]
+        navBar?.titleTextAttributes = [NSAttributedStringKey.font: font as Any, NSAttributedStringKey.foregroundColor: UIColor.white]
 
     }
 }
