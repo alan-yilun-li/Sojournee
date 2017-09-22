@@ -7,20 +7,17 @@
 //
 
 import UIKit
+import AVFoundation
 
 class CameraViewController: UIViewController {
 
-    @IBOutlet weak var picture: UIImageView!
+    @IBOutlet weak var cameraPicture: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         ViewCustomizer.setup(navigationBar: navigationController?.navigationBar)
-        
-        let imagePicker = UIImagePickerController()
-        imagePicker.sourceType = .camera
-        imagePicker.delegate = self
-        present(imagePicker, animated: false)
+        cameraPicture.layer.opacity = 0.4
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,6 +36,20 @@ class CameraViewController: UIViewController {
     }
     */
 
+    @IBAction func showCameraTapped(_ sender: Any) {
+    
+        guard UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera) else {
+            let noCameraAlert = UIAlertController(title: "Uh-oh!", message: "It looks like your camera is unavailable. Please review your settings at Settings > Privacy.", preferredStyle: .alert)
+            noCameraAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(noCameraAlert, animated: true)
+            return
+        }
+        
+        let imagePicker = UIImagePickerController()
+        imagePicker.sourceType = .camera
+        imagePicker.delegate = self
+        present(imagePicker, animated: false)
+    }
 }
 
 extension CameraViewController: UINavigationControllerDelegate {}
