@@ -21,33 +21,23 @@ class PhotoViewController: UIViewController {
         
         if Target.current != nil {
             
-            DispatchQueue.main.async {
-                
-                LoadingView.showLoadingIndicator(onView: self.view, message: "Loading...")
-                self.view.bringSubview(toFront: self.webView)
-            }
+            let severity: Double = 100000
+            let latitude = round(Target.current!.location.coordinate.latitude * severity) / severity
+            let longitude = round(Target.current!.location.coordinate.longitude * severity) / severity
             
-            DispatchQueue.global(qos: .userInitiated).async { [unowned self] () -> Void in
-                
-                let severity: Double = 100000
-                let latitude = round(Target.current!.location.coordinate.latitude * severity) / severity
-                let longitude = round(Target.current!.location.coordinate.longitude * severity) / severity
-                
-                let locationString = "\(latitude),\(longitude)"
-                print(locationString)
-                
-                let size = Int(self.webView.frame.width)
-                let sizeString = "\(size)x\(size)"
-                
-                let postString = "location=\(locationString)&" + "size=\(sizeString)&" + "key=\(APIKeys.GOOGLE_API_KEY)"
-                print(postString)
-                var request = URLRequest(url: URL(string: "https://maps.googleapis.com/maps/api/streetview?" + postString)!)
-                request.httpMethod = "POST"
-                
-                self.webView.delegate = self
-                self.webView.loadRequest(request)
-                
-            }
+            let locationString = "\(latitude),\(longitude)"
+            print(locationString)
+            
+            let size = Int(self.webView.frame.width)
+            let sizeString = "\(size)x\(size)"
+            
+            let postString = "location=\(locationString)&" + "size=\(sizeString)&" + "key=\(APIKeys.GOOGLE_API_KEY)"
+            print(postString)
+            var request = URLRequest(url: URL(string: "https://maps.googleapis.com/maps/api/streetview?" + postString)!)
+            request.httpMethod = "POST"
+            
+            self.webView.delegate = self
+            self.webView.loadRequest(request)
             
         } else {
             view.bringSubview(toFront: photoImageView)
@@ -72,11 +62,13 @@ class PhotoViewController: UIViewController {
 extension PhotoViewController: UIWebViewDelegate {
     
     func webViewDidStartLoad(_ webView: UIWebView) {
+        LoadingView.showLoadingIndicator(onView: view, message: "Getting Streetview!")
     }
     
     func webViewDidFinishLoad(_ webView: UIWebView) {
         LoadingView.removingLoadingIndicator()
         if let target = Target.current {
+            print("Should've gotten picture")
             UIGraphicsBeginImageContext(webView.frame.size)
             
             let context = UIGraphicsGetCurrentContext()
@@ -88,7 +80,7 @@ extension PhotoViewController: UIWebViewDelegate {
     }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        print(error)
+        print("WEBVIEW LOAD ERROR: \(String(describing: error))")
     }
 }
 
