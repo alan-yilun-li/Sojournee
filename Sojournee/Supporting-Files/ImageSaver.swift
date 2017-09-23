@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreLocation
 
 class ImageSaver {
     
@@ -17,32 +18,12 @@ class ImageSaver {
     
     private let fileDirectory = FileManager().urls(for: .documentDirectory, in: .userDomainMask).first
     
-    var targetImageName = "target.png"
-    
-    var ownImageName = "own.png"
-    
-    var targetImageURL: URL {
-        let location = fileDirectory!.appendingPathComponent(targetImageName, isDirectory: false)
-        return location
-    }
-    
-    var ownImageURL: URL {
-        let location = fileDirectory!.appendingPathComponent(ownImageName, isDirectory: false)
-        return location
-    }
-    
-    func saveTargetImage(image: UIImage) {
+    func saveImage(image:UIImage, forLocation location: CLLocation) {
         do {
-            try UIImagePNGRepresentation(image)!.write(to: targetImageURL, options: [.atomic])
-        } catch (let error) {
-            print("POP")
-            print("error: \(error)")
-        }
-    }
-    
-    func saveTakenImage(image:UIImage) {
-        do {
-            try UIImagePNGRepresentation(image)!.write(to: ownImageURL, options: [.atomic])
+            let locationString = String(location.coordinate.latitude + location.coordinate.longitude)
+            
+            let fileLocation = fileDirectory!.appendingPathComponent(locationString, isDirectory: false)
+            try UIImagePNGRepresentation(image)!.write(to: fileLocation, options: [.atomic])
         } catch (let error) {
             print("POP")
             print("error: \(error)")

@@ -24,7 +24,7 @@ class Target {
     
     var photo: UIImage! {
         didSet {
-            ImageSaver.shared.saveTakenImage(image: photo)
+            ImageSaver.shared.saveImage(image: photo, forLocation: location)
         }
     }
     

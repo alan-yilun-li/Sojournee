@@ -19,7 +19,7 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Sojourn-->
+        <!--Sojournee-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MapViewController" customModule="Sojournee" customModuleProvider="target" sceneMemberID="viewController">
@@ -98,7 +98,7 @@
                             <constraint firstItem="ORo-88-BTs" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="zwr-6g-gIN"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Sojourn" id="AJT-qf-Kvg"/>
+                    <navigationItem key="navigationItem" title="Sojournee" id="AJT-qf-Kvg"/>
                     <connections>
                         <outlet property="addTargetButton" destination="QpL-dk-u2m" id="j2J-iC-8y1"/>
                         <outlet property="distanceLabel" destination="lRS-3p-IXU" id="fPF-er-2cX"/>
@@ -110,7 +110,7 @@
             </objects>
             <point key="canvasLocation" x="2015.2" y="138.98050974512745"/>
         </scene>
-        <!--Sojourn-->
+        <!--Sojournee-->
         <scene sceneID="S0t-Pa-kWE">
             <objects>
                 <viewController id="dAq-iT-8ud" customClass="CameraViewController" customModule="Sojournee" customModuleProvider="target" sceneMemberID="viewController">
@@ -121,15 +121,49 @@
                     <view key="view" contentMode="scaleToFill" id="hZV-VS-OFA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap anywhere to take a picture. " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6m-PW-tzV">
+                                <rect key="frame" x="57" y="471" width="260.5" height="26.5"/>
+                                <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="22"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bigcamera" translatesAutoresizingMaskIntoConstraints="NO" id="7Ro-H6-SrA">
+                                <rect key="frame" x="40" y="186" width="295" height="295"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="7Ro-H6-SrA" secondAttribute="height" multiplier="1:1" id="oEN-W6-uNK"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="a6m-PW-tzV" firstAttribute="centerX" secondItem="hZV-VS-OFA" secondAttribute="centerX" id="Jai-LY-YTU"/>
+                            <constraint firstItem="7Ro-H6-SrA" firstAttribute="leading" secondItem="hZV-VS-OFA" secondAttribute="leading" constant="40" id="QYT-OY-YWy"/>
+                            <constraint firstAttribute="trailing" secondItem="7Ro-H6-SrA" secondAttribute="trailing" constant="40" id="Sw2-VG-1KU"/>
+                            <constraint firstItem="7Ro-H6-SrA" firstAttribute="centerX" secondItem="hZV-VS-OFA" secondAttribute="centerX" id="WQ5-cH-QDM"/>
+                            <constraint firstItem="a6m-PW-tzV" firstAttribute="top" secondItem="7Ro-H6-SrA" secondAttribute="bottom" constant="-10" id="Zbd-Rk-U62"/>
+                            <constraint firstItem="7Ro-H6-SrA" firstAttribute="centerY" secondItem="hZV-VS-OFA" secondAttribute="centerY" id="gOg-7A-IHn"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="anq-fB-N2u" appends="YES" id="ZGa-Ii-B8E"/>
+                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Sojourn" id="Psd-4x-PQ2"/>
+                    <navigationItem key="navigationItem" title="Sojournee" id="Psd-4x-PQ2"/>
+                    <connections>
+                        <outlet property="cameraPicture" destination="7Ro-H6-SrA" id="Uf5-A7-8gA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JDv-Fb-5eM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="anq-fB-N2u">
+                    <connections>
+                        <action selector="showCameraTapped:" destination="dAq-iT-8ud" id="BXz-yW-6Ep"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4751.1999999999998" y="-106.59670164917542"/>
         </scene>
-        <!--Sojourn-->
+        <!--Sojournee-->
         <scene sceneID="duV-8t-j2W">
             <objects>
                 <viewController id="e0i-Nk-wng" customClass="PhotoViewController" customModule="Sojournee" customModuleProvider="target" sceneMemberID="viewController">
@@ -184,7 +218,7 @@
                             <constraint firstItem="80A-8p-PuB" firstAttribute="leading" secondItem="Bay-GU-ZI4" secondAttribute="leading" id="qFL-cH-Lxc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Sojourn" id="r4j-fy-q1C"/>
+                    <navigationItem key="navigationItem" title="Sojournee" id="r4j-fy-q1C"/>
                     <connections>
                         <outlet property="photoImageView" destination="j4M-hO-Ltv" id="Lfv-jH-cbZ"/>
                         <outlet property="webView" destination="80A-8p-PuB" id="LLZ-B2-lLa"/>
@@ -269,6 +303,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="bigcamera" width="800" height="800"/>
         <image name="map" width="25" height="25"/>
     </resources>
 </document>

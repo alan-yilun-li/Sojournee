@@ -14,7 +14,6 @@ class PhotoViewController: UIViewController {
     
     @IBOutlet weak var webView: UIWebView!
     
-    
     private var incrementer = 0
     
     override func viewWillAppear(_ animated: Bool) {
