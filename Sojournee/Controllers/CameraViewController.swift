@@ -45,6 +45,13 @@ class CameraViewController: UIViewController {
             return
         }
         
+        guard let _ = Target.current else {
+            let noTargetAlert = UIAlertController(title: "Uh-oh!", message: "It looks like you don't have a target right now. Please go to the map screen to add one.", preferredStyle: .alert)
+            noTargetAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            present(noTargetAlert, animated: true)
+            return
+        }
+        
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .camera
         imagePicker.delegate = self
@@ -59,9 +66,9 @@ extension CameraViewController: UIImagePickerControllerDelegate {
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        _ = info[UIImagePickerControllerOriginalImage] as! UIImage
+        let picture = info[UIImagePickerControllerOriginalImage] as! UIImage
         
-        // Do something with the picture here
+        ImageSaver.shared.saveImage(image: picture, forLocation: (Target.current?.location)!)
     }
     
     
