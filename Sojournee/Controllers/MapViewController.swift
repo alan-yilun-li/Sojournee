@@ -69,7 +69,7 @@ class MapViewController: UIViewController {
         
     }
     
-    private func giveNewTarget() {
+    func giveNewTarget() {
         
         // Getting the new coordinates
         let targetCoordinate = mapView.userLocation.coordinate.randomize()

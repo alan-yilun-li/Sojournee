@@ -69,8 +69,44 @@ extension CameraViewController: UIImagePickerControllerDelegate {
         let picture = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         ImageSaver.shared.saveImage(image: picture, forLocation: (Target.current?.location)!)
+        
+        // Put new image comparison code here
+        dismiss(animated: true, completion: { [unowned self] () -> Void in
+            
+            LoadingView.showLoadingIndicator(onView: self.view, message: "Comparing...")
+            
+            // Hardcoded timer to test loadingview
+            Timer.scheduledTimer(withTimeInterval: 5.0, repeats: false, block: { [unowned self] (timer) in
+                
+                LoadingView.removingLoadingIndicator()
+                let success = true // Test code for UI
+                if success {
+                    let successAlert = UIAlertController(title: "Success!", message: "Nice, you got it!", preferredStyle: .alert)
+                    let returnAction = UIAlertAction(title: "Return", style: .cancel, handler: nil)
+                    /*
+                    let addAnotherTargetAction = UIAlertAction(title: "Keep Going", style: .default, handler: { (alertAction) in
+                        self.tabBarController!.selectedIndex = 0
+                        guard let mapViewController = self.tabBarController!.viewControllers![0] as? MapViewController else {
+                            fatalError()
+                        }
+                        mapViewController.giveNewTarget()
+                    })
+                     successAlert.addAction(addAnotherTargetAction)
+                     */
+                    successAlert.addAction(returnAction)
+                    self.present(successAlert, animated: true, completion: nil)
+                } else {
+                    
+                    let failureAlert = UIAlertController(title: "Uh-Oh!", message: "Sorry, your picture wasn't quite close enough.", preferredStyle: .alert)
+                    
+                    failureAlert.addAction(UIAlertAction(title: "OK :(", style: .default, handler: nil))
+                    self.present(failureAlert, animated: true)
+                }
+            })
+        })
     }
     
-    
-    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
+    }
 }

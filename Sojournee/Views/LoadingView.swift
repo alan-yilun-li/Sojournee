@@ -73,7 +73,7 @@ struct LoadingView {
         // Setting up the indicator box
         // Width is set here but there is also a constraint added to dictate it
         /// Width of the box based on the size of the explanation label and the spacing.
-        let width = message.size(withAttributes: [NSAttributedStringKey.font: explanationLabel.font]).width + activityIndicator.frame.width + (3 * contentStackView.spacing)
+        let width = message.size(withAttributes: [NSAttributedStringKey.font: explanationLabel.font]).width + activityIndicator.frame.width + (4 * contentStackView.spacing)
         
         indicatorBoxView.frame = CGRect(x: 0, y: 0, width: width, height: 50)
         indicatorBoxView.center = containerView.center
