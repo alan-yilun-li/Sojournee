@@ -83,16 +83,23 @@ extension CameraViewController: UIImagePickerControllerDelegate {
                 if success {
                     let successAlert = UIAlertController(title: "Success!", message: "Nice, you got it!", preferredStyle: .alert)
                     let returnAction = UIAlertAction(title: "Return", style: .cancel, handler: nil)
-                    /*
                     let addAnotherTargetAction = UIAlertAction(title: "Keep Going", style: .default, handler: { (alertAction) in
                         self.tabBarController!.selectedIndex = 0
-                        guard let mapViewController = self.tabBarController!.viewControllers![0] as? MapViewController else {
+                        guard let mapViewNavController = self.tabBarController!.viewControllers![0] as? UINavigationController else {
                             fatalError()
                         }
-                        mapViewController.giveNewTarget()
+                        
+                        guard let mapViewController = mapViewNavController.topViewController as? MapViewController else {
+                            fatalError()
+                        }
+                        
+                        let successAlert = UIAlertController(title: "Target Set", message: "Go get em, champ!", preferredStyle: .alert)
+                        successAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                            mapViewController.giveNewTarget()
+                        }))
+                        mapViewController.present(successAlert, animated: true, completion: nil)
                     })
-                     successAlert.addAction(addAnotherTargetAction)
-                     */
+                    successAlert.addAction(addAnotherTargetAction)
                     successAlert.addAction(returnAction)
                     self.present(successAlert, animated: true, completion: nil)
                 } else {

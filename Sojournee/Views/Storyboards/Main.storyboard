@@ -77,7 +77,7 @@
                                     <constraint firstAttribute="height" constant="40" id="dnY-ba-tMo"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BodoniSvtyTwoITCTT-Book" family="Bodoni 72" pointSize="17"/>
-                                <state key="normal" title="Add Target">
+                                <state key="normal" title="Set Target">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
