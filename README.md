@@ -1,8 +1,7 @@
 # Sojournee
 Geo-caching Photo game -- sets pins in your area; a Google Street View picture of where the pin is will be displayed to you. Take a picture similar enough to the Street View picture to earn points! 
 
-
-
+![sample-composite](https://raw.githubusercontent.com/alan-yilun-li/Sojournee/master/sample_images/composite.png)
 
 ## Dev Notes 
 
